@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link rel="stylesheet" type="text/css" href="../styleCss/style.css"/>
+<title>MySeminar - Modifier mot de passe</title>
+</head>
+
+<body>
+	<h1 id="logo">MySeminar</h1>
+	
+	<div id="main">
+		<h1 class="espace_mdp">Modifier mon mot de passe</h1><hr class="separateurs"/>
+			<form action="../modifier-mon-pass" method="post" id="form_pass">
+				<fieldset class="modif_pass">                       
+        			<div id="saisies">
+        				<label for="previousPass"> Ancien mot de passe : </label>
+   	       				<input type="password" name="previousPass" id="n0"/>
+        				<br/>
+        			
+   	    				<label for="newPass1"> Nouveau mot de passe : </label>
+   	       				<input type="password" name="newPass1" id="n1"/>
+   	       				<br />
+   	       			
+            		  	<label for="newPass2">Confimation nouveau mot de passe : </label>
+   	       				<input type="password" name="newPass2" id="n2"/> 
+						<br />
+               		</div>
+        	        
+               		<input type="submit" value="Envoyer" id="button"/>
+				</fieldset>
+    		</form>
+	</div>
+	
+	<div id="" class="clear_both">
+		<p class="centre">&copy;Tous droits r&eacute;serv&eacute;s - Descartes Inc.</p>
+	</div>
+	
+</body>
+
+</html>

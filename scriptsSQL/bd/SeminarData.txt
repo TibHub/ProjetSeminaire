@@ -1,0 +1,117 @@
+﻿REM **********************************************************************
+REM Script ORACLE d'insertion des données de la base SEMINAR
+REM Auteur : Fessy Jerome
+REM Date de MAJ : 5/07/2004
+REM ********************************************************************** 
+
+REM INSERTION dans la table Theme 
+
+DROP SEQUENCE seqtheme;
+DROP SEQUENCE seqanimateur;
+DROP SEQUENCE seqsociete;
+DROP SEQUENCE seqseminaire;
+
+CREATE SEQUENCE seqtheme start with 0 minvalue 0;
+CREATE SEQUENCE seqanimateur start with 0 minvalue 0;
+CREATE SEQUENCE seqsociete start with 0 minvalue 0;
+CREATE SEQUENCE seqseminaire start with 0 minvalue 0;
+
+
+delete from theme;
+insert into theme (Idtheme,libelleTheme) values (seqtheme.nextval,'Bases de Données');
+insert into theme (Idtheme,libelleTheme) values (seqtheme.nextval,'Réseau');
+insert into theme (Idtheme,libelleTheme) values (seqtheme.nextval,'Internet');
+insert into theme (Idtheme,libelleTheme) values (seqtheme.nextval,'Programmation');
+insert into theme (Idtheme,libelleTheme) values (seqtheme.nextval,'Architecture');
+insert into theme (Idtheme,libelleTheme) values (seqtheme.nextval,'Maintenance');
+
+REM  INSERTION dans la table Animateur
+delete from animateur;
+insert into animateur (Idanim,NomAnim, PrenomAnim) values (seqanimateur.nextval,'Valant','Pierre');
+insert into animateur (Idanim,NomAnim, PrenomAnim) values (seqanimateur.nextval,'Erlon','Lucy');
+insert into animateur (Idanim,NomAnim, PrenomAnim) values (seqanimateur.nextval,'Passini','Jacques');
+insert into animateur (Idanim,NomAnim, PrenomAnim) values (seqanimateur.nextval,'Larcoux','Edouard');
+insert into animateur (Idanim,NomAnim, PrenomAnim) values (seqanimateur.nextval,'Talinu','Marc');
+insert into animateur (Idanim,NomAnim, PrenomAnim) values (seqanimateur.nextval,'Armandi','Maëlle');
+
+REM INSERTION dans la table Societe 
+delete from societe;
+insert into societe (Idsociete,RaisonSociale, Adresse, Ville, CP, Email)
+values (seqsociete.nextval,'EDF', '12 rue de la Pierre', 'Paris', '75013', 'Elian@edf.fr');
+insert into societe (Idsociete,RaisonSociale, Adresse, Ville, CP, Email)
+values (seqsociete.nextval,'Soleo', '4 rue de la liberté', 'Longues sur Mer', '14400', 'Soleo@soleo.fr');
+insert into societe (Idsociete,RaisonSociale, Adresse, Ville, CP, Email)
+values (seqsociete.nextval,'IOS', '3 Place Vendome', 'Anthony', '92200', 'fme@ios.fr');
+insert into societe (Idsociete,RaisonSociale, Adresse, Ville, CP, Email)
+values (seqsociete.nextval,'Placo', '17 Avenue Leclerc', 'Corbreuse', '91300', 'Placo@free.fr');
+insert into societe (Idsociete,RaisonSociale, Adresse, Ville, CP, Email)
+values (seqsociete.nextval,'Arcano', '2 chemin du Home', 'Corbreuse', '91300', 'Arcono@wanadoo.fr');
+
+
+REM INSERTION dans la table Seminaire REM
+
+delete from seminaire;
+
+insert into seminaire (Idsem, IntituleSem, DateSem, PrixSem, IdTheme, IdSemConseille, NbrePlaceMax)
+values (seqseminaire.nextval,'PostgreSQL Developpeur', '12/06/2004', 75, 1, NULL, 19);
+insert into seminaire (Idsem,IntituleSem, DateSem, PrixSem, IdTheme, IdSemConseille, NbrePlaceMax)
+values (seqseminaire.nextval,'Oracle Admistrateur', '29/07/2004', 170,1, NULL, 20);
+insert into seminaire (Idsem,IntituleSem, DateSem, PrixSem, IdTheme, IdSemConseille, NbrePlaceMax)
+values (seqseminaire.nextval,'Informix Developpeur', '31/07/2004', 150, 1, NULL, 20);
+insert into seminaire (Idsem,IntituleSem, DateSem, PrixSem, IdTheme, IdSemConseille, NbrePlaceMax)
+values (seqseminaire.nextval,'PostgreSQL Administrateur', '19/06/2004', 120, 1, 1, 19);
+insert into seminaire (Idsem,IntituleSem, DateSem, PrixSem, IdTheme, IdSemConseille, NbrePlaceMax)
+values (seqseminaire.nextval,'PHP', '05/07/2004', NULL , 3, NULL, 15);
+
+REM INSERTION dans la table Intervention
+delete from intervention;
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(1,2,3, 1);
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(1,4,3, 1);
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(2,1,3, 1);
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(3,1,3, 2);
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(1,5,3, 1);
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(1,3,2, 1);
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(2,3,1, 2);
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(3,3,1, 3);
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(4,3,1, 4);
+insert into intervention (idAnim, IdSem, DureeInter, OrdrePassage)
+values(5,3,1, 5);
+
+REM INSERTION dans la table Inscription 
+
+delete from inscription;
+
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (1, 1, 2, '12/05/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (1, 2, 1, '17/06/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (1, 3, 5, '7/06/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (2, 2, 10, '1/07/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (2, 3, 4, '12/07/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (2, 5, 1, '12/05/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (2, 1, 1, '11/05/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (3, 3, 3, '29/05/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (4, 4, 10, '19/05/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (5, 5, 4, '2/07/2004');
+insert into inscription (IdSociete, Idsem, NbrePlace, DateInscription)
+values (5, 1, 6, '1/05/2004');
+
+COMMIT;
+

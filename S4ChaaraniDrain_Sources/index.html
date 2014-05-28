@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link rel="stylesheet" type="text/css" href="styleCss/style.css"/>
+<title>MySeminar - Accueil</title>
+</head>
+
+<body>
+	<h1 id="logo">MySeminar</h1>
+	
+	<div id="main">
+		<h1 class="bienvenue">Bienvenue sur MySeminar !</h1>
+		<p class="bienvenue"> Sur ce site, vous pourrez visualiser vos s&eacute;minaires, vous inscrire &agrave; un s&eacute;minaire ou encore voir vos prochains s&eacute;minaires et bien d'autres fonctionnalit&eacute;s vous seront propos&eacute;es. Mais avant de pouvoir les visualiser, veuillez vous authentifier.</p>
+	</div>
+	
+	<div id="formauth">
+	
+		<form action="authent" method="post" id="form_auth"><!--nom de methode en minuscules en XHTML Strict-->
+			<fieldset class="auth">
+				<legend>Connexion</legend> <!-- change en "Mon compte" si connexion-->
+           	        <div id="saisies"> <!-- change en div id="liens_compte" -->
+           	        	<label for="login">Login : </label>
+   	        			<input type="text" name="login" id="log"/>
+   	        			<br />
+    	        	
+       		 			<label for="password">Mot de passe : </label>
+        				<input type="password" name="password" id="pass"/> 
+						<br />
+    	       	    </div>
+    
+    			<input type="submit" value="Envoyer" id="button"/>
+   			</fieldset>
+  		</form>             
+	</div>
+	
+	<div id="" class="clear_both">
+		<p class="centre">&copy;Tous droits r&eacute;serv&eacute;s - Descartes Inc.</p>
+	</div>
+	
+</body>
+
+</html>

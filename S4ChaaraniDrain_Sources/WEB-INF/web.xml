@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Copyright 2007 Big boss special editions
+
+  Licensed under the Big boss License, Version 1.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License by special authorization at
+
+      jean-francois.bretteuniv-paris5.fr
+ -->
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+    <display-name>Big boss</display-name>
+    <description>
+      Servlet 2.4 Examples.
+    </description>
+
+    
+
+    <!-- Define servlets that are included in the example application -->
+
+    	<servlet>
+       		<servlet-name>jfb1</servlet-name>
+        	<servlet-class>TestServlet</servlet-class>
+    	</servlet>
+	<servlet-mapping>
+        	<servlet-name>jfb1</servlet-name>
+        	<url-pattern>/servlet/affic</url-pattern>
+    	</servlet-mapping>
+
+	<servlet>
+        	<servlet-name>jfb2</servlet-name>
+        	<servlet-class>communes.AuthentificationServlet</servlet-class>
+    	</servlet>
+
+	<servlet-mapping>
+        	<servlet-name>jfb2</servlet-name>
+        	<url-pattern>/authent</url-pattern>
+    	</servlet-mapping>
+
+	<servlet>
+        	<servlet-name>jfb3</servlet-name>
+        	<servlet-class>VerificationServlet</servlet-class>
+    	</servlet>
+
+	<servlet-mapping>
+        	<servlet-name>jfb3</servlet-name>
+        	<url-pattern>/verification</url-pattern>
+    	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>jfb4</servlet-name>
+		<servlet-class>societe.AfficherSemTheme</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb4</servlet-name>
+		<url-pattern>/SemSociete</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>jfb5</servlet-name>
+		<servlet-class>societe.InscriptionSem</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb5</servlet-name>
+		<url-pattern>/inscription</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>jfb6</servlet-name>
+		<servlet-class>societe.AfficherSemDate</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb6</servlet-name>
+		<url-pattern>/recherche_seminaires_date</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>jfb9</servlet-name>
+		<servlet-class>communes.ModifPassServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb9</servlet-name>
+		<url-pattern>/modifier-mon-pass</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>jfb10</servlet-name>
+		<servlet-class>communes.Deconnexion</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb10</servlet-name>
+		<url-pattern>/deconnexion</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>jfb11</servlet-name>
+		<servlet-class>animateur.SesSemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb11</servlet-name>
+		<url-pattern>/visualiser-mes-seminaires</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>jfb12</servlet-name>
+		<servlet-class>animateur.SupprIntervServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb12</servlet-name>
+		<url-pattern>/supprimer-intervention</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>jfb13</servlet-name>
+		<servlet-class>administrateur.GererSemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb13</servlet-name>
+		<url-pattern>/gerer-les-seminaires</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>jfb14</servlet-name>
+		<servlet-class>administrateur.SupprSemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb14</servlet-name>
+		<url-pattern>/supprimer-seminaire</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>jfb15</servlet-name>
+		<servlet-class>administrateur.CreerSemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb15</servlet-name>
+		<url-pattern>/creer-seminaire-2</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>jfb17</servlet-name>
+		<servlet-class>administrateur.SaisirSemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb17</servlet-name>
+		<url-pattern>/creer-seminaire-1</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>jfb16</servlet-name>
+		<servlet-class>administrateur.CreerInterServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jfb16</servlet-name>
+		<url-pattern>/creer-intervention</url-pattern>
+	</servlet-mapping>
+</web-app>

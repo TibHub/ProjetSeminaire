@@ -1,0 +1,34 @@
+DROP SEQUENCE sequtil;
+
+CREATE SEQUENCE sequtil start with 0 minvalue 0;
+DELETE FROM utilisateur;
+
+REM !!!!!!!!!!! Data société !!!!!!!!!!!!!!!!!
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'edf','1234', 0 ,1,NULL);
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'sol','4567', 0 ,2,NULL);
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'ios','7890', 0 ,3,NULL);
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'pla','8901', 0 ,4,NULL);
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'arc','1234', 0 ,5,NULL);
+
+REM !!!!!!!!!!! Data animateur !!!!!!!!!!!!!!!!!
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'val','pier', 0 , NULL,1);
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'erl','luc', 0 , NULL,2);
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'pas','jacq', 0 ,NULL,3);
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'lar','ed', 0 , NULL,4);
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'tal','m', 0 , NULL,5);
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'arm','ma', 0 , NULL,6);
+
+REM !!!!!!!!!!! Data administrateur !!!!!!!!!!!!!!!!!
+INSERT INTO utilisateur (idUtil, login, password, estAdmin, idSoc, idAnim) 
+values (sequtil.nextval, 'admin','admin',1,NULL,NULL);

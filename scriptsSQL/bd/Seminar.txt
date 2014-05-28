@@ -1,0 +1,77 @@
+/* **********************************************************************
+Script ORACLE de crétion de la base SEMINAR
+Auteur : Fessy Jerome
+Date de MAJ : 5/07/2004
+********************************************************************** */  
+/* SUPPRESSION des tables */
+DROP TABLE societe CASCADE CONSTRAINT;
+DROP TABLE seminaire CASCADE CONSTRAINT;
+DROP TABLE animateur CASCADE CONSTRAINT;
+DROP TABLE theme CASCADE CONSTRAINT;
+DROP TABLE inscription CASCADE CONSTRAINT;
+DROP TABLE intervention CASCADE CONSTRAINT;
+
+
+/*  CREATION TABLE societe */
+
+CREATE TABLE societe (
+IdSociete INTEGER,
+RaisonSociale VARCHAR2(30) NOT NULL,
+Adresse VARCHAR2(50) NOT NULL,
+Ville VARCHAR2(20) NOT NULL,
+CP CHAR(5) NOT NULL,
+Email VARCHAR2(40),
+CONSTRAINT societe_idSociete_pkey PRIMARY KEY(idSociete)
+);
+
+/*  CREATION TABLE theme */
+
+CREATE TABLE theme (
+IdTheme INTEGER,
+LibelleTheme VARCHAR2(40) UNIQUE NOT NULL,
+CONSTRAINT theme_idTheme_pkey PRIMARY KEY(IdTheme)
+);
+
+
+/*  CREATION TABLE seminaire */
+
+CREATE TABLE seminaire (
+IdSem INTEGER,
+IntituleSem VARCHAR2(40) NOT NULL,
+DateSem DATE,
+PrixSem NUMBER(9,2) CONSTRAINT seminaire_prix_ck CHECK(PrixSem>=0 or PrixSem IS NULL),
+IdTheme INTEGER NOT NULL REFERENCES theme(IdTheme) ON DELETE CASCADE,
+IdSemConseille INTEGER REFERENCES seminaire(IdSem) ON DELETE CASCADE,
+NbrePlaceMax SMALLINT,
+CONSTRAINT seminaire_idSem_pkey PRIMARY KEY(IdSem)
+);
+
+/*  CREATION TABLE animateur */
+
+CREATE TABLE animateur (
+IdAnim INTEGER,
+NomAnim VARCHAR2(20) NOT NULL,
+PrenomAnim VARCHAR2(25),
+CONSTRAINT animateur_idAnim_pkey PRIMARY KEY(IdAnim)
+);
+
+
+/*  CREATION TABLE intervention */
+
+CREATE TABLE intervention (
+IdAnim INTEGER REFERENCES animateur(IdAnim) ON DELETE CASCADE,
+IdSem INTEGER REFERENCES seminaire(IdSem) ON DELETE CASCADE,
+DureeInter SMALLINT NOT NULL CONSTRAINT intervention_duree_ck CHECK(DureeInter >0),
+OrdrePassage SMALLINT DEFAULT 1 NOT NULL CONSTRAINT intervention_ordre_ck CHECK(OrdrePassage >0),
+CONSTRAINT intervention_idAnim_IdSem_pkey PRIMARY KEY(IdAnim,IdSem)
+);
+
+/*  CREATION TABLE inscription */
+
+CREATE TABLE inscription (
+IdSociete INTEGER  REFERENCES societe(IdSociete) ON DELETE CASCADE,
+IdSem INTEGER REFERENCES seminaire(IdSem) ON DELETE CASCADE,
+NbrePlace SMALLINT NOT NULL CONSTRAINT inscription_NbrPlace_ck CHECK(NbrePlace>0),
+Dateinscription DATE,
+CONSTRAINT insc_idSoc_IdSem_pkey PRIMARY KEY(IdSociete,IdSem)
+);

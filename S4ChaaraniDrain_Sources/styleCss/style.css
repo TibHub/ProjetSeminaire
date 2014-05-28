@@ -1,0 +1,102 @@
+﻿body {
+	font-family:"Palatino Linotype";
+	margin-left:auto; margin-right:auto;
+	width:76em;
+}
+
+body div {
+	/*border-style : solid;*/
+	border-radius:1.6em;
+}
+
+h1#logo {
+	font-size:52px;
+	width:5em;
+	margin:auto;
+	margin-bottom:0.5em;
+}
+
+div#main {
+	width:50em;
+	float:left;
+	height:25em;
+}
+
+div#formauth{
+	width:25em;
+	float:left;
+	
+}
+
+div.clear_both{
+	clear:both;
+}
+
+
+form#form_auth label, form#form_pass label {
+	text-align:right;
+	margin-right:0.2em;
+	margin-left:0.5em;
+	display:inline-block;
+	line-height:2em;
+}
+
+form#form_auth label {
+	width:8em;
+}
+
+form#form_pass label {
+	width:10em;
+} 
+
+div#saisies {
+	width:20em;
+}
+
+fieldset.auth, fieldset.compte, fieldset.modif_pass {
+	border-radius:1.6em;
+}
+
+form#form_auth input, form#form_pass input
+{
+	width:10em;
+}
+
+form#form_auth input#button, form#form_pass input#button
+{
+	float:right;
+	min-width:8em;
+	width:8em;
+	border:none;
+	margin-right:1.5em;
+}
+
+p.centre {
+	text-align:center;
+}
+
+table#liste td
+{
+	background-color:#FFFFFF;
+}
+
+table#coordonnees td, table#coordonnees td.gc
+{
+	width:50em;
+}
+
+table#liste
+{
+	margin:2em;
+}
+
+table#liste th.gf, table#liste tr.gc td.gf,
+	table#liste tr.gf td.gf
+{
+	background-color:#E8E8E8
+}
+
+table#liste thead th, table#liste tr.gc td
+{
+	background-color:#EFEFEF;
+}

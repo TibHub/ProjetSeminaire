@@ -1,0 +1,30 @@
+REM /* **********************************************************************
+REM Script ORACLE de création de la table USER dans la base SEMINAR
+REM Auteur : Cynthia
+REM ********************************************************************** */  
+
+PROMPT Suppression de la table utilisateur;
+REM SUPPRESSION de la table
+
+DROP TABLE utilisateur CASCADE CONSTRAINT;
+
+PROMPT Table en cours de creation 
+REM CREATION de la table utilisateur
+
+CREATE TABLE utilisateur (
+idUtil INTEGER,
+login VARCHAR2(15) NOT NULL,
+password VARCHAR2(15) NOT NULL,
+estAdmin INTEGER DEFAULT 0,
+idSoc INTEGER,
+idAnim INTEGER,
+CONSTRAINT pk_user_login PRIMARY KEY(login));
+
+PROMPT Table crée
+
+ALTER TABLE utilisateur 
+ADD CONSTRAINT FK_Anim_idAn FOREIGN KEY(idAnim) REFERENCES animateur(IdAnim) ON DELETE CASCADE;
+ALTER TABLE utilisateur 
+ADD CONSTRAINT FK_Soc_idSoc FOREIGN KEY(idSoc) REFERENCES societe(IdSociete) ON DELETE CASCADE;
+
+PROMPT Contraintes définies
